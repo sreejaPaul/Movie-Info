@@ -2,6 +2,9 @@
   "name": "movie-library",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "16.13.0"
+  },
   "homepage": "https://sreejaPaul.github.io/Movie-Library",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
