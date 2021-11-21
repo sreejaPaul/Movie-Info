@@ -5,7 +5,7 @@
   "engines": {
     "node": "16.13.0"
   },
-  "homepage": "https://sreejaPaul.github.io/Movie-Library",
+  "homepage": "https://sreejaPaul.github.io/Movie-Information",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
