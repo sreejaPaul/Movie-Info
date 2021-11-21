@@ -24,6 +24,7 @@ const Moviedetail = ()=>{
     const[statewidth,setwidth] = useState(0);
     const[tagline,settag] = useState("");
     const[stateid,setstateid] = useState(0);
+    const [videos, setVideos] = useState([]);
 
    
     const id= parseInt(useParams().MovieID);
@@ -37,6 +38,7 @@ const Moviedetail = ()=>{
                             + process.env.REACT_APP_API_KEY
                              + process.env.REACT_APP_MOVIEDETAIL_THIRDPART_PUBLIC_URL)
                 .then((datas)=>{
+                    console.log(datas.data.videos)
                     setgenre(
                         datas.data.genres.map((genre)=>{
                             return genre.name+" ";
@@ -72,6 +74,14 @@ const Moviedetail = ()=>{
             
     },[id]);
 
+    useEffect(()=>{
+        axios.get("https://api.themoviedb.org/3/movie/"+id+"/videos?api_key=9d6c10bbddeab2458cd6f37eb6d21b85&language=en-US")
+        .then((datas)=>{
+            console.log(datas)
+            setVideos(datas)
+        })
+    },[id])
+
     
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -87,7 +97,7 @@ const Moviedetail = ()=>{
                 {id !== stateid ? <Loader type="ThreeDots" color="#4C4C4E" height="100" width="100" style={style}/>
                 : (<Content genresname={genresname} genresid = {genresid} visitlink={visitlink} imdblink={imdblink} 
                     title={title} overview={overview} releasedate={releasedate} runtime={runtime} vote={vote} poster_path={poster_path} 
-                    statewidth={statewidth} id={id} tagline={tagline}/>)
+                    statewidth={statewidth} id={id} tagline={tagline} videos={videos}/>)
                 }
 
             </div>

@@ -6,7 +6,7 @@
 .divstyle{
     float:left;
     padding: 20px;
-    
+    padding-bottom: 2px;
 }
 
 .divstyle:hover{
@@ -27,12 +27,3 @@
     
 }
 
-
-.maindiv::-webkit-scrollbar {
-    display: none;
-}
-
-.maindiv {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}

@@ -52,3 +52,8 @@ h1 {
     transform: scale(1.08);
 
 }
+#filterSearch {
+    width: 90%;
+    margin-left:5vw;
+    margin-right:5vw;
+}

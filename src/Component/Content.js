@@ -1,13 +1,15 @@
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCompactDisc ,faExternalLinkSquareAlt, faFileVideo } from '@fortawesome/free-solid-svg-icons';
-import {faImdb} from '@fortawesome/free-brands-svg-icons';
+import {faImdb, faYoutube} from '@fortawesome/free-brands-svg-icons';
 import Recomendation from '../Container/Recomendation';
 import Cast from '../Container/Cast';
 import {Link} from 'react-router-dom';
 import './MovieDetail.css';
 
 const Content = (props)=>{
+    
+
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [props.id]);
@@ -32,6 +34,18 @@ const Content = (props)=>{
     const setcolor = (statewidth)=>{
         let color = (statewidth>70) ? "#008000" : ((statewidth>35) ? "#FFD700" : "#cc0000");
         return color;
+    }
+
+    const renderTrailer = (videos)=> {
+        if (videos.length === 0) {
+          alert("No Trailer Found");
+          return;
+        }
+        const { key } = videos.find(
+          (video) => video.type === 'Trailer' && video.site === 'YouTube'
+        );
+        console.log(key)
+        openInNewTab("https://www.youtube.com/watch?v="+key);
     }
   
 
@@ -106,6 +120,13 @@ const Content = (props)=>{
                                 <FontAwesomeIcon icon={faImdb} size="lg" style={{marginRight: "10px"}}/>
                                 {"IMDB"}  
                             </button> : null}
+                            {(props.videos.data.results.length > 0)?
+                            <button onClick={()=>renderTrailer(props.videos.data.results)} className="btn">
+                                <FontAwesomeIcon icon={faYoutube} size="lg" style={{marginRight: "10px"}}/>
+                                {"Trailer"}  
+                            </button> : null}
+                    
+                            
                         </div>
                         
                     </div>
