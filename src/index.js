@@ -7,7 +7,7 @@ import {BrowserRouter} from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basepath="/Movie-Library">
+    <BrowserRouter basepath="/">
       <App />
     </BrowserRouter>
     

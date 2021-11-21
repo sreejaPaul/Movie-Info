@@ -69,7 +69,7 @@ const Searchmovie = () => {
             <div style={{ display: "flex" }}>
                 <div style={{ flex: "1" }}><h1>{"Related Movies"}</h1></div>
                 <div>
-                    <Link to="/Movie-Library" style={{ textDecoration: "none", color: "inherit" }}>
+                    <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
                         <button style={{ border: "none", backgroundColor: "white", float: "right",marginTop:"25px"}}>
                             <FontAwesomeIcon icon={faHome} size="2x" id="homebutton" />
                         </button>
@@ -80,7 +80,7 @@ const Searchmovie = () => {
             <div style={{ margin: "20px" }}>
                 {movie.map((movie) => {
                     return (
-                        <Link to={"/Movie-Library/MovieDetail/" + movie.id} style={{ textDecoration: "none", color: "inherit" }} key={movie.id} >
+                        <Link to={"/MovieDetail/" + movie.id} style={{ textDecoration: "none", color: "inherit" }} key={movie.id} >
                             <Card
                                 key={movie.id}
                                 imagelinks={process.env.REACT_APP_IMAGE_WIDTH200 + movie.poster_path}

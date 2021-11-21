@@ -13,31 +13,31 @@ import Movielist from '../Container/Movielist';
 function App() {
   return (
     <div>
-      <Route path="/Movie-Library" exact>
+      <Route path="/" exact>
         <Uppernavbar/>
         <Frontslider/>
         <Movieslider/>
   
       </Route>
 
-      <Route path="/Movie-Library/Search/:SearchItem" exact>
+      <Route path="/Search/:SearchItem" exact>
           <Searchmovie/>
       </Route>
 
 
-    <Route path="/Movie-Library/MovieList/:Input" exact>
+    <Route path="/MovieList/:Input" exact>
         <Movielist/>
     </Route>
 
-      <Route path="/Movie-Library/MovieDetail/:MovieID" exact>       
+      <Route path="/MovieDetail/:MovieID" exact>       
         <Moviedetail/>
       </Route> 
 
-      <Route path="/Movie-Library/Genre/:Genrename/:GenreID" exact>
+      <Route path="/Genre/:Genrename/:GenreID" exact>
         <Genredetail/>
       </Route>
 
-      <Route path="/Movie-Library/Cast/:CastID" exact>
+      <Route path="/Cast/:CastID" exact>
         <Castdetail/>
       </Route>
   
