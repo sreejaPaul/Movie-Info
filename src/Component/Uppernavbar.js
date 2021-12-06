@@ -64,7 +64,7 @@ class Uppernavbar extends React.Component{
         return(
             <div id="titledivstyle" onClick={this.ondivclick}>
                 <div className="titlestyle">
-                    <Link to="/Movie-Information" id="titlelink">
+                    <Link to="/" id="titlelink">
                         <h2>Movie Library</h2>
                     </Link>
                 </div>
